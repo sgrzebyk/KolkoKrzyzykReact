@@ -1,21 +1,23 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {Router, browserHistory} from 'react-router';
+import Routes from './Routes/index'
 
 class App extends Component {
   render() {
+//TOdO RUTOWANIE:  {/*https://css-tricks.com/learning-react-router/*/}
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+        <Router>
+            <Route path="/" component={Home} />
+            <Route path="/users" component={Users} />
+
+        <Router/>
+
     );
   }
 }
 
 export default App;
+
+
+<Route path="/" component={App} />
