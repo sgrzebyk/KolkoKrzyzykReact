@@ -4,8 +4,11 @@ import './index.css';
 
 import {Home} from './Components/Home'
 import {Profile} from './Components/Profile'
+import {NavDrawer} from './Components/NavDrawer'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import injectTapEventPlugin from 'react-tap-event-plugin'
+
+
 
 import {BrowserRouter as Router, Link, Route, browserHistory} from 'react-router-dom';
 injectTapEventPlugin();
@@ -14,8 +17,8 @@ ReactDOM.render(
     (
             <MuiThemeProvider>
                 <div>
-                <h1>TicTacTuring</h1>
-                <main>
+                <NavDrawer/>
+                    <main>
                     <Router history={browserHistory}>
                         <div>
                             <Route exact path="/" component={Home}/>
