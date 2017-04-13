@@ -3,19 +3,28 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 import {Home} from './Components/Home'
-import {Users} from './Components/Users'
+import {Profile} from './Components/Profile'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import injectTapEventPlugin from 'react-tap-event-plugin'
 
-import {BrowserRouter as Router, Link, Route} from 'react-router-dom';
-
+import {BrowserRouter as Router, Link, Route, browserHistory} from 'react-router-dom';
+injectTapEventPlugin();
 
 ReactDOM.render(
     (
-        <Router>
-            <div>
-                <Route exact path="/" component={Home}/>
-                <Route path="/users" component={Users}/>
-            </div>
-        </Router>
+            <MuiThemeProvider>
+                <div>
+                <h1>TicTacTuring</h1>
+                <main>
+                    <Router history={browserHistory}>
+                        <div>
+                            <Route exact path="/" component={Home}/>
+                            <Route path="/profile" component={Profile}/>
+                        </div>
+                    </Router>
+                </main>
+                </div>
+            </MuiThemeProvider>
     ),
-  document.getElementById('root')
+    document.getElementById('root')
 );
